@@ -17,8 +17,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
         innerView.backgroundColor = .black
         
     }
-//    func configure(image: Image) {
-//        imageView.image =
+//    func configure(image: SFSymbols) {
+//        imageView.image = UIImage(named: image)
 //  }
 }
 

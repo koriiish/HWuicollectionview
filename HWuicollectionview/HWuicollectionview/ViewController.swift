@@ -11,24 +11,32 @@ import Foundation
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    let watchSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.watch)?.withRenderingMode(.alwaysTemplate))
-    let airpodsSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.airpods)?.withRenderingMode(.alwaysTemplate))
-    let mouseSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.mouse)?.withRenderingMode(.alwaysTemplate))
-    let pencilSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.pencil)?.withRenderingMode(.alwaysTemplate))
-    let ipadSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.ipad)?.withRenderingMode(.alwaysTemplate))
+//    let watchSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.watch)?.withRenderingMode(.alwaysTemplate))
+//    let airpodsSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.airpods)?.withRenderingMode(.alwaysTemplate))
+//    let mouseSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.mouse)?.withRenderingMode(.alwaysTemplate))
+//    let pencilSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.pencil)?.withRenderingMode(.alwaysTemplate))
+//    let ipadSFSymbol: UIImageView = UIImageView(image: UIImage(systemName: SFSymbols.ipad)?.withRenderingMode(.alwaysTemplate))
 
-    let image: [Image] = []
+//    let image: [String] = []
+    let image = ["applewatch.side.right",
+                 "airpods.gen3",
+                 "magicmouse",
+                 "applepencil.gen1",
+                 "ipad.gen2",
+                 "homepod",
+                 "airpodsmax",
+                 "macpro.gen3.fill"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        let image = [Image(image1: UIImageView(image: UIImage(systemName: SFSymbols.watch)?.withRenderingMode(.alwaysTemplate)), image2: UIImageView(image: UIImage(systemName: SFSymbols.airpods)?.withRenderingMode(.alwaysTemplate)), image3:  UIImageView(image: UIImage(systemName: SFSymbols.mouse)?.withRenderingMode(.alwaysTemplate)), image4: UIImageView(image: UIImage(systemName: SFSymbols.pencil)?.withRenderingMode(.alwaysTemplate)), image5: UIImageView(image: UIImage(systemName: SFSymbols.ipad)?.withRenderingMode(.alwaysTemplate)))]
-        
-
+//
+    
         setupCollectionView()
-        setupWatchSFSymbol()
-        setupAirpodsSFSymbol()
-        setupMouseSFSymbol()
-        setupPencilSFSymbol()
+//        setupWatchSFSymbol()
+//        setupAirpodsSFSymbol()
+//        setupMouseSFSymbol()
+//        setupPencilSFSymbol()
         
     }
     
@@ -38,7 +46,7 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.reloadData()
         
-        var layout = UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 100, height: 100)
@@ -52,29 +60,30 @@ class ViewController: UIViewController {
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
-            let images = image[indexPath.row]
+            cell.configure(with: image[indexPath.item])
+         //   let images = image[indexPath.row]
             return cell
         }
-        private func setupWatchSFSymbol() {
-            watchSFSymbol.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-            collectionView.addSubview(watchSFSymbol)
+//        private func setupWatchSFSymbol() {
+//            watchSFSymbol.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+//            collectionView.addSubview(watchSFSymbol)
+//
+//        }
+//        private func setupAirpodsSFSymbol() {
+//            airpodsSFSymbol.frame = CGRect(x: 100, y: 0, width: 100, height: 100)
+//            collectionView.addSubview(airpodsSFSymbol)
+//
+//        }
+//        private func setupMouseSFSymbol() {
+//            mouseSFSymbol.frame = CGRect(x: 200, y: 0, width: 100, height: 100)
+//            collectionView.addSubview(mouseSFSymbol)
+//
+//        }
+//        private func setupPencilSFSymbol() {
+//            pencilSFSymbol.frame = CGRect(x: 300, y: 0, width: 100, height: 100)
+//            collectionView.addSubview(pencilSFSymbol)
 
         }
-        private func setupAirpodsSFSymbol() {
-            airpodsSFSymbol.frame = CGRect(x: 100, y: 0, width: 100, height: 100)
-            collectionView.addSubview(airpodsSFSymbol)
-
-        }
-        private func setupMouseSFSymbol() {
-            mouseSFSymbol.frame = CGRect(x: 200, y: 0, width: 100, height: 100)
-            collectionView.addSubview(mouseSFSymbol)
-
-        }
-        private func setupPencilSFSymbol() {
-            pencilSFSymbol.frame = CGRect(x: 300, y: 0, width: 100, height: 100)
-            collectionView.addSubview(pencilSFSymbol)
-
-        }
-    }
+    
     
 

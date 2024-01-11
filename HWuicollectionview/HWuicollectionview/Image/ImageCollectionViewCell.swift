@@ -14,11 +14,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
        
-        innerView.backgroundColor = .black
+      //  innerView.backgroundColor = .black
         
     }
-//    func configure(image: SFSymbols) {
-//        imageView.image = UIImage(named: image)
-//  }
+    func configure(with imageName: String) {
+        imageView.image = UIImage(systemName: imageName)
+  }
 }
 

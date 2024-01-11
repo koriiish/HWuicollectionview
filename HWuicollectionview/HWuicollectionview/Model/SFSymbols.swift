@@ -16,13 +16,13 @@ struct SFSymbols {
 }
 
 
-struct Image {
-    let image1: UIImageView
-    let image2: UIImageView
-    let image3: UIImageView
-    let image4: UIImageView
-    let image5: UIImageView
-}
+//struct Image:{
+//    let image1: UIImageView
+//    let image2: UIImageView
+//    let image3: UIImageView
+//    let image4: UIImageView
+//    let image5: UIImageView
+//}
 
 //struct Image {
 //    let watch: UIImage
